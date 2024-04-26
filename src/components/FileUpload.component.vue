@@ -3,7 +3,11 @@ import { ref, reactive, computed } from 'vue'
 import FileInputComponent from './FileInput.component.vue'
 import FileValidatorComponent from './FileValidator.component.vue'
 import { useFileInputValidator } from '@builtwithjavascript/file-input-validator'
-import type { IFileInfo, IFileValidatorItem, IFileValidatorOptions } from '@builtwithjavascript/file-input-validator'
+import type {
+  IFileInfo,
+  IFileValidatorItem,
+  IFileValidatorOptions
+} from '@builtwithjavascript/file-input-validator'
 
 type IFileUploadProps = {
   id: string

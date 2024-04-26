@@ -1,3 +1,4 @@
+/// <reference types="vue" />
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
@@ -7,11 +8,10 @@ import path from 'path'
 import { name } from './package.json'
 const projectName = name.replace('@builtwithjavascript/', '').trim().toLowerCase()
 
+
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue()
-  ],
+  plugins: [vue()],
   envDir: './src/',
   resolve: {
     alias: {
