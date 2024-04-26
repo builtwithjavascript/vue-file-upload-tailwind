@@ -5,5 +5,8 @@ export type {
   IFileValidatorOptions,
   IFileValidator
 } from '@builtwithjavascript/file-input-validator'
-export { FileInputValidatorItems } from '@builtwithjavascript/file-input-validator'
+export {
+  FileInputValidatorItems,
+  DefaultFileValidatorOptions
+} from '@builtwithjavascript/file-input-validator'
 export * from './components'
