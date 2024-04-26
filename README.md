@@ -1,5 +1,9 @@
-# vue-file-upload-tailwind
+# @builtwithjavascript/vue-file-upload-tailwind
 A file upload Vue component with validation styled with Tailwind CSS
+
+[![npm version](https://badge.fury.io/js/@builtwithjavascript%2Fvue-file-upload-tailwind.svg)](https://badge.fury.io/js/@builtwithjavascript%2Fvue-file-upload-tailwind)
+
+## Screenshot
 
 <img src="readme-files/vue-screenshot.png" alt="Vue Screenshot" style="width:300px;"/>
 
