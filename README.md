@@ -22,6 +22,8 @@ npm i -D @builtwithjavascript/vue-file-upload-tailwind
 
 ## Consume
 ```
+<script setup lang="ts">
+import { ref } from 'vue'
 import { FileUploadComponent } from '@builtwithjavascript/vue-file-upload-tailwind' 
 import type { 
   IFileInfo,
@@ -29,7 +31,7 @@ import type {
 } from '@builtwithjavascript/vue-file-upload-tailwind' 
 
 const fileValidatorOptions: IFileValidatorOptions = {
-  allowedTypes: ['csv', 'xls'],
+  allowedTypes: ['csv', 'json', 'txt'],
   maxSize: 3, // in MB
   maxNameLength: 60, // max name length in chars
   nameTruncateMaxLength: 35, // will truncate the display of the name
@@ -49,20 +51,30 @@ const onUploadClicked = async (fileInfo: IFileInfo) => {
   ...
 }
 
-...
+// optional: to reset from your parent component:
+const refFileUploadComp = ref<InstanceType<typeof FileUploadComponent> | null>()
+const reset = () => {
+  refFileUploadComp.value?.reset()
+}
+</script>
 
-<FileUploadComponent 
-  id="file-input" 
-  uploadLabel="Import File"
-  ref="refFileUploadComp"
-  :validatorOptions="validatorOptions"
-  :roundedCorners="true"
-  :showOnlyErrors="true"
-  successClass="success bg-pink-500"
-  errorClass = "error bg-gray-500"
-  inputCssClass = "border border-slate-500"
-  @uploadClicked="onUploadClicked" />
+<template>
+  <FileUploadComponent 
+    id="file-input" 
+    uploadLabel="Import File"
+    ref="refFileUploadComp"
+    :validatorOptions="fileValidatorOptions"
+    :roundedCorners="true"
+    :showOnlyErrors="true"
+    successClass="success bg-pink-500"
+    errorClass = "error bg-gray-500"
+    inputCssClass = "border border-slate-500"
+    @uploadClicked="onUploadClicked" />
+
+  <!-- optional: to reset from your parent component -->
+  <button @click="reset">Reset</button>
+</template>
 ```
 
-NOTE: if you pass `showOnlyErrors` true, that only the validator items that fail will be displayed.
+NOTE: if you pass `showOnlyErrors` true, then only the validator items that fail will be displayed.
 
