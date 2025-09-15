@@ -81,4 +81,3 @@ const reset = () => {
 ```
 
 NOTE: if you pass `showOnlyErrors` true, then only the validator items that fail will be displayed.
-
