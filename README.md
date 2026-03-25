@@ -81,3 +81,6 @@ const reset = () => {
 ```
 
 NOTE: if you pass `showOnlyErrors` true, then only the validator items that fail will be displayed.
+
+### Dev Dependencies
+@builtwithjavascript/file-input-validator @testing-library/user-event @testing-library/vue @types/node @vitejs/plugin-vue jsdom prettier typescript vite vitest vitest-preview vue vue-tsc
