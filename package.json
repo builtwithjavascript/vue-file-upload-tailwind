@@ -1,6 +1,6 @@
 {
   "name": "@builtwithjavascript/vue-file-upload-tailwind",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Starter kit for component library using Vite with TypeScript (just JS, no frameworks or libraries)",
   "author": "Damiano Fusco",
   "license": "MIT",
@@ -29,22 +29,8 @@
     "preversion": "npm run test",
     "version": "npm run build",
     "postversion": "git push",
-    "push": "npm run pretty; git add .; git commit -m \"Latest\"; git push"
-  },
-  "devDependencies": {
-    "@builtwithjavascript/file-input-validator": "^1.0.9",
-    "@testing-library/user-event": "^14.6.1",
-    "@testing-library/vue": "^8.1.0",
-    "@types/node": "^25.5.0",
-    "@vitejs/plugin-vue": "^6.0.5",
-    "jsdom": "^29.0.1",
-    "prettier": "^3.8.1",
-    "typescript": "^6.0.2",
-    "vite": "^8.0.2",
-    "vitest": "^4.1.1",
-    "vitest-preview": "^0.0.3",
-    "vue": "^3.5.31",
-    "vue-tsc": "^3.2.6"
+    "push": "npm run pretty; git add .; git commit -m \"Latest\"; git push",
+    "npm-clean": "rm -rf node_modules dist package-lock.json && npm uninstall @builtwithjavascript/file-input-validator @testing-library/user-event @testing-library/vue @types/node @vitejs/plugin-vue jsdom prettier typescript vite vitest vitest-preview vue vue-tsc && npm i -D @builtwithjavascript/file-input-validator @testing-library/user-event @testing-library/vue @types/node @vitejs/plugin-vue jsdom prettier typescript vite vitest vitest-preview vue vue-tsc"
   },
   "files": [
     "dist"
@@ -58,5 +44,20 @@
   },
   "types": "./dist/index.d.ts",
   "main": "./dist/vue-file-upload-tailwind.umd.js",
-  "module": "./dist/vue-file-upload-tailwind.es.js"
+  "module": "./dist/vue-file-upload-tailwind.es.js",
+  "devDependencies": {
+    "@builtwithjavascript/file-input-validator": "^1.0.9",
+    "@testing-library/user-event": "^14.6.1",
+    "@testing-library/vue": "^8.1.0",
+    "@types/node": "^25.5.2",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "jsdom": "^29.0.2",
+    "prettier": "^3.8.1",
+    "typescript": "^6.0.2",
+    "vite": "^8.0.6",
+    "vitest": "^4.1.3",
+    "vitest-preview": "^0.0.3",
+    "vue": "^3.5.32",
+    "vue-tsc": "^3.2.6"
+  }
 }
