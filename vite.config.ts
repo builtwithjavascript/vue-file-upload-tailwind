@@ -1,12 +1,13 @@
 /// <reference types="vue" />
-/// <reference types="vitest" />
+/// <reference types="vitest/config" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
-import { name } from './package.json'
-const projectName = name.replace('@builtwithjavascript/', '').trim().toLowerCase()
+import pkg from './package.json' with { type: 'json' }
+
+const projectName = pkg.name.replace('@builtwithjavascript/', '').trim().toLowerCase()
 
 
 // https://vitejs.dev/config/
@@ -15,7 +16,7 @@ export default defineConfig({
   envDir: './src/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src/')
+      '@': path.resolve(import.meta.dirname, 'src/')
     },
   },
   test: {
@@ -27,7 +28,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
+      entry: path.resolve(import.meta.dirname, 'src/index.ts'),
       name: projectName,
       fileName: (format) => `${projectName}.${format}.js`,
     },
